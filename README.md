@@ -6,7 +6,6 @@ This will be similar in that the user is asked simple yes, no or I don’t know 
 The number of questions will vary based on the information that is collected from the user. 
 The goal of the genie is to guess what person you are thinking of and in the least number of questions as possible in order to make the Users experience more interesting.
 
-## This is a student team project
-### from Tacoma Community College in Computer Science 142 Class 
+### ** This is a student team project from Tacoma Community College in Computer Science 142 Class 
 
-### Collabration of Mohammed Al-hamed, Daemien Zarapkar and Stacy Valladares
+### ** Collabration of Mohammed Al-hamed, Daemien Zarapkar and Stacy Valladares
