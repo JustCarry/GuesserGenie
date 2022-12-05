@@ -1,7 +1,7 @@
-
 public class Question {
-	String content;
-	String target;
+
+	private String content;
+	private String target;
 
 	public final static int ANSWER_YES = 1;
 	public final static int ANSWER_NO = 2;
@@ -32,6 +32,9 @@ public class Question {
 			}
 		}
 		return false;
+	}
+	public String getContent() {
+		return this.content;
 	}
 
 

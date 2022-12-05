@@ -2,9 +2,9 @@ import java.lang.reflect.Method;
 
 public class Student {
 	private String name;
-	private int gender;
-	private int age;
-	private boolean recentHighschooler;
+	private int gender; // 1 = male, 2 = female, 3 = non-binary
+	private int age; 
+	private boolean recentHighschooler; // true, false
 	private String hairColor;
 	private boolean children;
 	private int maritalStatus; // Single, Married, Divorced, Dating
@@ -59,6 +59,7 @@ public class Student {
 		
 		return false; // No Information Found;
 	}
+	
 	public String getName() {
 		return name;
 	}
@@ -118,7 +119,5 @@ public class Student {
 	public String getCurrentPet() {
 		return currentPet;
 	}
-	
-	
 	
 }
