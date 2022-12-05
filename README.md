@@ -10,4 +10,4 @@ The goal of the genie is to guess what person you are thinking of and in the lea
 
 ##### ** This is a student team project from Tacoma Community College in Computer Science 142 Class 
 
-### * Collabration of Mohammed Al-hamed, Daemien Zarapkar and Stacy Valladares
+### * Collabration of Mohammed Al-hamed, Daemien Zarapkar and Stacy Valladares 
