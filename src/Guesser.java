@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+
 
 /***
  * 
@@ -14,31 +17,31 @@ public class Guesser {
 	public static ArrayList<Student> studentList = new ArrayList<Student>();
 	
 	public static void main(String[] args) {
-//		initalizeStudents();
+		initalizeStudents();
 		
-		
-		Student mohammedAlhamed = new Student("Mohammed Al-hamed", 1, 0, false, null, false, 0, 0, 0, false, false, 0, null, null, null);
-		Question genderQuestion = new Question("Is the student a female gender?", "getGender=2");
-		Scanner genie = new Scanner(System.in);
-		int answer = promptAnswerReadLine(genie, genderQuestion.getContent());
-		
-		System.out.println(answer);
-		System.out.println(genderQuestion.translateTarget(mohammedAlhamed, answer));
+		// Demo
+//		Question genderQuestion = new Question("Is the student a female gender?", "getGender=2");
+//		Scanner genie = new Scanner(System.in);
+//		int answer = promptAnswerReadLine(genie, genderQuestion.getContent());
+//		
+//		System.out.println(answer);
+//		System.out.println(genderQuestion.translateTarget(mohammedAlhamed, answer));
 	}
 	 
 	
 	public static void initalizeStudents() {
 		
-		// Demo
+		Student mohammedAlhamed = new Student("Mohammed Al-hamed", 1, 0, false, null, false, 0, 0, 0, false, false, 0, null, null, null);
+		
+		
+		studentList.add(mohammedAlhamed);
 		
 	}
 	
-	/**
-	 * Allows the user to have only one answer per question 
-	 * @param Scanner s the scanner that inteded to prompt the user.
+	/***
+	 * Allows the user to have only one answer per question (Yes, No, Don't know)
 	 * @param String prompt the string line to print to the user
-	 * @param int max the maximum number the user can input (from 1 to the max)
-	 * @return int the input of the user
+	 * @return int the answer of the user
 	 */
 	public static int promptAnswerReadLine(Scanner s, String prompt) {
 		while(true) {
@@ -61,10 +64,30 @@ public class Guesser {
 			}
 		}
 	}
+	
+	// Refernce: https://stackoverflow.com/questions/10530353/convert-string-array-to-arraylist; https://www.geeksforgeeks.org/arraylist-array-conversion-java-toarray-methods/;
 
-	public static Student[] clearAllImpossibleStudents(Student[] possibleStudentsLeft, Question currentQuestion, int currentAnswer) {
+	/***
+	 * Clears out all the students don't correspond with the question and its answer. 
+	 * @param Student[] current possible students
+	 * @param Question the current question to match the student list with
+	 * @param int the answer that the user provided corresponding to the question being. 
+	 * @return Student[] new list with only possible student left.
+	 */
+	public static ArrayList<Student> clearAllImpossibleStudents(ArrayList<Student> possibleStudents, Question currentQuestion, int currentAnswer) {
 		
-		return new Student[] {};
+		ArrayList<Student> possibleStudentsLeft = new ArrayList<Student>(possibleStudents);
+		for( Student possibleStudent : possibleStudents ) {
+
+			if(!currentQuestion.translateTarget(possibleStudent, currentAnswer)) {
+				
+				possibleStudentsLeft.remove(possibleStudent);
+				
+			}
+			
+		}
+
+		return possibleStudentsLeft;
 	}
 	
 }
